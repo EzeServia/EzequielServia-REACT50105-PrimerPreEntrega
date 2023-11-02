@@ -2,5 +2,11 @@
   width: 150px;
 }
 .fondo {
+  width: auto;
   background-image: url(./imagen/brillo.jpg);
+  height: 200px;
+}
+.texto {
+  font-size: 24px;
+  color: hotpink;
 }

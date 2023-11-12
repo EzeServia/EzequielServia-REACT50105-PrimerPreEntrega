@@ -7,7 +7,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import CartWidgetComponent from "../CartWidgetComponent/CartWidgetComponent";
 import "./NavbarComponent.css";
 
-const NavbarComponent = () => {
+export const NavBarComponent = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary fondo ">
       <Container fluid>
@@ -58,5 +58,3 @@ const NavbarComponent = () => {
     </Navbar>
   );
 };
-
-export default NavbarComponent;

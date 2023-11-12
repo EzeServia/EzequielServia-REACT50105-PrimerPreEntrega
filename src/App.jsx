@@ -1,15 +1,41 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import NavBarComponent from "./components/navbarComponents/NavbarComponent";
-import CartWidgetComponent from "./components/CartWidgetComponent/CartWidgetComponent";
-import ItemListConteiner from "./components/ItemListContainer/ItemListConteiner";
+import {
+  NavBarComponent,
+  LoaderComponent,
+  ItemListContainer,
+} from "./components";
 
-function App() {
+// Custom Hook
+import { useAllProducts } from "./hooks/useProducts";
+const App = () => {
+  //Productos
+  //Productos en oferta
+  // DRY - concepto de clean code que significa Don't Repeat Yourself
+
+  const { products, loading, error } = useAllProducts(6);
+
+  // if (loading) {
+  //   return <LoaderComponent />;
+  // } else {
+  //   if (error) {
+  //     return <div>Hubo un error</div>;
+  //   } else {
+  //     return <ItemListContainer products={products} />;
+  //   }
+  // }
+
   return (
     <div>
       <NavBarComponent />
-      <ItemListConteiner greeting={"¡Es hora de Brillar!"} />
+      {loading ? (
+        <LoaderComponent />
+      ) : error ? (
+        <div>Hubo un error</div>
+      ) : (
+        <ItemListContainer products={products} />
+      )}
     </div>
   );
-}
+};
 
 export default App;

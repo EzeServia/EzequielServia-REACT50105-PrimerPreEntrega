@@ -2,3 +2,6 @@
   color: rgb(206, 70, 224);
   text-align: center;
 }
+.none {
+  background-image: none;
+}

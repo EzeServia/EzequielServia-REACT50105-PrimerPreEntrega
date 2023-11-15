@@ -6,6 +6,7 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import CartWidgetComponent from "../CartWidgetComponent/CartWidgetComponent";
 import "./NavbarComponent.css";
+import { Link } from "react-router-dom";
 
 export const NavBarComponent = () => {
   return (
@@ -25,12 +26,8 @@ export const NavBarComponent = () => {
           <Nav
             className="me-auto my-2 my-lg-0 texto"
             style={{ maxHeight: "100px" }}>
-            <Nav.Link className="texto" href="#action1">
-              Inicio
-            </Nav.Link>
-            <Nav.Link className="texto" href="#action2">
-              Productos
-            </Nav.Link>
+            <Link to="/">Home</Link>
+            <Link to="#link">Productos</Link>
             <NavDropdown
               className="texto"
               title="Categorias"

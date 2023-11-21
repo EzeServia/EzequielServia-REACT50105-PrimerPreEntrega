@@ -1,20 +1,20 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home } from "../pages/Home";
-import { NavBarComponent } from "../components";
-import { ItemDetailContainer } from "../pages";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "../pages/Home";
+import NavBarComponent from "../components/navbarComponents/NavbarComponent";
+import Category from "../pages/Category";
+import Item from "../pages/item";
 
-export const MainRouter = () => {
-  //HOC - High Order Component
-  // Siempre SIEMPRE SIEMPREEEE se debe crear una ruta por cada pagina
-  //Parametro por url
-
+const MainRoutes = () => {
   return (
-    <BrowserRouter>
+    <Router>
       <NavBarComponent />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/item/:productId" element={<ItemDetailContainer />} />
+        <Route path="/category/:categoryId" element={<Category />} />
+        <Route path="/item/:id" element={<Item />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 };
+
+export default MainRoutes;

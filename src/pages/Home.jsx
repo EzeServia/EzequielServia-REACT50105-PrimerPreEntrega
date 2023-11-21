@@ -1,19 +1,8 @@
 import React from "react";
-import { useAllProducts } from "../hooks/useProducts";
-import { LoaderComponent, ItemListContainer } from "../components";
+import ItemListContainer from "../components/ItemListContainer/ItemListContainer";
+import { ProductsData } from "../services/data/ProductsData";
 
-export const Home = () => {
-  const { products, loading, error } = useAllProducts(6);
-
-  return (
-    <div>
-      {loading ? (
-        <LoaderComponent />
-      ) : error ? (
-        <div>Hubo un error</div>
-      ) : (
-        <ItemListContainer products={products} />
-      )}
-    </div>
-  );
+const Home = () => {
+  return <ItemListContainer products={ProductsData} />;
 };
+export default Home;

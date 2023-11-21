@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 // Components
 
-import { MainRouter } from "./router/MainRouter";
+import MainRouter from "./router/MainRouter";
 
 const App = () => {
   return (

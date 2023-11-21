@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 
 import { Link } from "react-router-dom";
 
-export const ItemListContainer = ({ products }) => {
+const ItemListContainer = ({ products }) => {
   return (
     <div
       style={{
@@ -16,11 +16,11 @@ export const ItemListContainer = ({ products }) => {
         return (
           <Card key={product.id} style={{ width: "18rem", margin: 20 }}>
             <Link to={`/item/${product.id}`}>
-              <Card.Img variant="top" src={product.thumbnail} />
+              <Card.Img variant="top" src={product.imageNamename} />
             </Link>
             <Card.Body>
               <Card.Title>{product.title}</Card.Title>
-              <Card.Text>{product.description}</Card.Text>
+              <Card.Text>{product.price}</Card.Text>
             </Card.Body>
           </Card>
         );
@@ -28,3 +28,4 @@ export const ItemListContainer = ({ products }) => {
     </div>
   );
 };
+export default ItemListContainer;

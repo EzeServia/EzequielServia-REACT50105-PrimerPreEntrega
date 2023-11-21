@@ -7,8 +7,9 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import CartWidgetComponent from "../CartWidgetComponent/CartWidgetComponent";
 import "./NavbarComponent.css";
 import { Link } from "react-router-dom";
+import { ProductsData } from "../../services/data/ProductsData";
 
-export const NavBarComponent = () => {
+const NavBarComponent = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary fondo ">
       <Container fluid>
@@ -27,17 +28,21 @@ export const NavBarComponent = () => {
             className="me-auto my-2 my-lg-0 texto"
             style={{ maxHeight: "100px" }}>
             <Link to="/">Home</Link>
-            <Link to="#link">Productos</Link>
             <NavDropdown
               className="texto"
               title="Categorias"
               id="navbarScrollingDropdown">
-              <NavDropdown.Item className="texto" href="#action3">
-                Brillos
-              </NavDropdown.Item>
-              <NavDropdown.Item className="texto" href="#action4">
-                Gemas
-              </NavDropdown.Item>
+              {ProductsData.map((product) => {
+                return (
+                  <NavDropdown.Item key={product.id}>
+                    <Link
+                      to={`/category/${product.category}`}
+                      style={{ textDecoration: "none", color: "black" }}>
+                      {product.category}
+                    </Link>
+                  </NavDropdown.Item>
+                );
+              })}
             </NavDropdown>
           </Nav>
           <Form className="d-flex">
@@ -55,3 +60,4 @@ export const NavBarComponent = () => {
     </Navbar>
   );
 };
+export default NavBarComponent;

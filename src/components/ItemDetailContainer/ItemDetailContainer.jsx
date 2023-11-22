@@ -13,10 +13,10 @@ const ItemDetailContainer = ({ product }) => {
       <Card
         key={product.id}
         style={{ width: "18rem", margin: 20, height: "500px" }}>
-        <Card.Img variant="top" src={product.thumbnail} />
+        <Card.Img variant="top" src={product.image} />
         <Card.Body>
           <Card.Title>{product.title}</Card.Title>
-          <Card.Text>{product.description}</Card.Text>
+          <Card.Text>{product.price}</Card.Text>
         </Card.Body>
       </Card>
     </div>

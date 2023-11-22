@@ -14,20 +14,24 @@ const NavBarComponent = () => {
     <Navbar expand="lg" className="bg-body-tertiary fondo ">
       <Container fluid>
         <Navbar.Brand>
-          <a>
-            <img
-              className="logo"
-              src="\src\components\navbarComponents\imagen\logoabrillar.png"
-              alt="Imagen de logo"
-            />
-          </a>
+          <Link to="/">
+            <a>
+              <img
+                className="logo"
+                src="\src\components\navbarComponents\imagen\logoabrillar.png"
+                alt="Imagen de logo"
+              />
+            </a>
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
             className="me-auto my-2 my-lg-0 texto"
             style={{ maxHeight: "100px" }}>
-            <Link to="/">Home</Link>
+            <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+              Home
+            </Link>
             <NavDropdown
               className="texto"
               title="Categorias"

@@ -8,7 +8,7 @@ import CartWidgetComponent from "../CartWidgetComponent/CartWidgetComponent";
 import "./NavbarComponent.css";
 import { Link } from "react-router-dom";
 import { ProductsData } from "../../services/data/ProductsData";
-
+import { ProductsCategoryData } from "../../services/data/ProductsCategoryData";
 const NavBarComponent = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary fondo ">
@@ -36,11 +36,11 @@ const NavBarComponent = () => {
               className="texto"
               title="Categorias"
               id="navbarScrollingDropdown">
-              {ProductsData.map((product) => {
+              {ProductsCategoryData.map((product) => {
                 return (
                   <NavDropdown.Item key={product.id}>
                     <Link
-                      to={`/category/${product.category}`}
+                      to={`/category/${ProductsData.category}`}
                       style={{ textDecoration: "none", color: "black" }}>
                       {product.category}
                     </Link>

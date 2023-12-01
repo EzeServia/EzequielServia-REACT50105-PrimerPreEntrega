@@ -1,5 +1,5 @@
 import { helix } from "ldrs";
-export const LoaderComponent = () => {
+const LoaderComponent = () => {
   helix.register();
   return (
     <div
@@ -10,7 +10,8 @@ export const LoaderComponent = () => {
         height: "100vh",
         width: "100vw",
       }}>
-      <l-helix size="70" speed="2.5" color="white"></l-helix>
+      <l-helix size="100" speed="8.5" color="white"></l-helix>
     </div>
   );
 };
+export default LoaderComponent;

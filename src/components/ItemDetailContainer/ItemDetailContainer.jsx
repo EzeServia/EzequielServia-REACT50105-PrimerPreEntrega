@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-
+import { ItemCount } from "../ItemCount/ItemCount";
 const ItemDetailContainer = ({ product }) => {
   return (
     <div
@@ -16,8 +16,9 @@ const ItemDetailContainer = ({ product }) => {
         <Card.Img variant="top" src={product.image} />
         <Card.Body>
           <Card.Title>{product.title}</Card.Title>
-          <Card.Text>{product.price}</Card.Text>
+          <Card.Text>${product.price}</Card.Text>
         </Card.Body>
+        <ItemCount></ItemCount>
       </Card>
     </div>
   );

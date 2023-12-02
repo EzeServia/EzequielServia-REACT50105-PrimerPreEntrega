@@ -23,6 +23,7 @@ export const ProductsData = [
     id: 3,
     title: "Paris Nigth",
     price: 7500,
+    category: "Gemas",
     image: imagen3,
   },
   {
@@ -37,11 +38,13 @@ export const ProductsData = [
     title: "Violeta",
     price: 2500,
     image: imagen5,
+    category: "Brillos",
   },
   {
     id: 6,
     title: "Rojo",
     price: 2500,
     image: imagen6,
+    category: "Brillos",
   },
 ];

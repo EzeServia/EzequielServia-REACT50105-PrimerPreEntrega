@@ -36,13 +36,13 @@ const NavBarComponent = () => {
               className="texto"
               title="Categorias"
               id="navbarScrollingDropdown">
-              {ProductsCategoryData.map((product) => {
+              {ProductsCategoryData.map((category) => {
                 return (
-                  <NavDropdown.Item key={product.id}>
+                  <NavDropdown.Item key={category.id}>
                     <Link
-                      to={`/category/${ProductsData.category}`}
+                      to={`/category/${category.category}`}
                       style={{ textDecoration: "none", color: "black" }}>
-                      {product.category}
+                      {category.category}
                     </Link>
                   </NavDropdown.Item>
                 );

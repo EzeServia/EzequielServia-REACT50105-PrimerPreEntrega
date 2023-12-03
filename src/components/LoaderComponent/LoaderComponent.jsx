@@ -5,12 +5,12 @@ const LoaderComponent = () => {
     <div
       style={{
         display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        alignItems: "center ",
+        justifyContent: "center ",
         height: "100vh",
         width: "100vw",
       }}>
-      <l-helix size="100" speed="8.5" color="white"></l-helix>
+      <l-helix size="100" speed="2.5" color="black"></l-helix>
     </div>
   );
 };

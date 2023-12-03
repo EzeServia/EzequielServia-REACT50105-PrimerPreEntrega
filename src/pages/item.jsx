@@ -1,40 +1,38 @@
-import React from "react";
-import ItemDetailContainer from "../components/ItemDetailContainer/ItemDetailContainer";
-import LoaderComponent from "../components/LoaderComponent/LoaderComponent";
-import { useParams } from "react-router-dom";
-import { ProductsData } from "../services/data/ProductsData";
+import { React, useState, useEffect } from "react";
 
-export const Loading = () => {
-  const [loadProducts, setLoadProducts] = useState(true);
+import { fetchProducts } from "../services/data/ProductsData"; // Asegúrate de importar ProductsData
+import ItemCall from "../components/ItemCall/ItemCall";
+import LoaderComponent from "../components/LoaderComponent/LoaderComponent";
+
+const Item = () => {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    // Simular una demora de 5 segundos
-    const delay = setTimeout(() => {
-      // Después de la demora, cambia el estado para indicar que la carga ha terminado
-      setLoadProducts(false);
-    }, 5000);
-    return () => clearTimeout(delay);
+    fetchProducts()
+      .then((data) => {
+        setProducts(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error al cargar los productos:", error);
+        setLoading(false);
+      });
   }, []);
+
   return (
     <div>
-      {loadProducts ? (
-        // Muestra el componente LoaderComponent mientras loadProducts es true
-        <LoaderComponent />
+      {loading ? (
+        <div>
+          <LoaderComponent></LoaderComponent>
+        </div>
       ) : (
-        // Muestra el contenido deseado después de la carga
-        { Item }
+        <div>
+          <ItemCall></ItemCall>
+        </div>
       )}
     </div>
   );
-};
-
-const Item = () => {
-  const { id } = useParams();
-
-  const productFiltered = ProductsData.filter(
-    (product) => product.id === parseInt(id)
-  );
-  console.log(productFiltered);
-  return <ItemDetailContainer product={productFiltered[0]} />;
 };
 
 export default Item;

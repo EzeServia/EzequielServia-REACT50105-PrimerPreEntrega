@@ -4,6 +4,21 @@ import imagen3 from "./image/gemacara3.webp";
 import imagen4 from "./image/rosababy.webp";
 import imagen5 from "./image/violeta402.webp";
 import imagen6 from "./image/rojo40.webp";
+
+const fetchProducts = () => {
+  return new Promise((resolve, reject) => {
+    // Aquí puedes realizar operaciones asíncronas, como fetch a una API, consulta a una base de datos, etc.
+    // Por ejemplo, aquí simplemente resolvemos la promesa después de un tiempo simulado.
+    setTimeout(() => {
+      const products = [ProductsData];
+      resolve(products);
+    }, 2000); // Simulamos un tiempo de carga de 1000 milisegundos (4 segundo)
+  });
+};
+console.log("4 segundos");
+
+export { fetchProducts };
+
 export const ProductsData = [
   {
     id: 1,

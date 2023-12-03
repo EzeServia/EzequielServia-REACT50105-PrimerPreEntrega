@@ -1,18 +1,39 @@
-import ItemListContainer from "../components/ItemListContainer/ItemListContainer";
-import { useParams } from "react-router-dom";
-import { ProductsData } from "../services/data/ProductsData";
-import { useEffect, useState } from "react";
+import { React, useState, useEffect } from "react";
+
+import { fetchProducts } from "../services/data/ProductsData"; // Asegúrate de importar ProductsData
+
+import CategoryComponent from "../components/CategoryComponent/CategoryComponent";
+import LoaderComponent from "../components/LoaderComponent/LoaderComponent";
+
 const Category = () => {
-  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const { categoryId } = useParams();
   useEffect(() => {
-    setFilteredProducts(
-      ProductsData.filter((product) => product.category === categoryId)
-    );
-  }, [categoryId]);
+    fetchProducts()
+      .then((data) => {
+        setProducts(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error al cargar los productos:", error);
+        setLoading(false);
+      });
+  }, []);
 
-  return <ItemListContainer products={filteredProducts} />;
+  return (
+    <div>
+      {loading ? (
+        <div>
+          <LoaderComponent></LoaderComponent>
+        </div>
+      ) : (
+        <div>
+          <CategoryComponent></CategoryComponent>
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default Category;

@@ -10,8 +10,7 @@ const fetchProducts = () => {
     // Aquí puedes realizar operaciones asíncronas, como fetch a una API, consulta a una base de datos, etc.
     // Por ejemplo, aquí simplemente resolvemos la promesa después de un tiempo simulado.
     setTimeout(() => {
-      const products = [ProductsData];
-      resolve(products);
+      resolve(ProductsData);
     }, 2000); // Simulamos un tiempo de carga de 1000 milisegundos (4 segundo)
   });
 };

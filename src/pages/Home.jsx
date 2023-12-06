@@ -22,13 +22,9 @@ const Home = () => {
   return (
     <div>
       {loading ? (
-        <div>
-          <LoaderComponent></LoaderComponent>
-        </div>
+        <LoaderComponent />
       ) : (
-        <div>
-          <ItemListContainer products={ProductsData}></ItemListContainer>
-        </div>
+        <ItemListContainer products={ProductsData} />
       )}
     </div>
   );

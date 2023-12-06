@@ -2,6 +2,9 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import { ItemCount } from "../ItemCount/ItemCount";
 const ItemDetailContainer = ({ product }) => {
+  const onAdd = (cantidad) => {
+    console.log(cantidad);
+  };
   return (
     <div
       style={{
@@ -18,7 +21,7 @@ const ItemDetailContainer = ({ product }) => {
           <Card.Title>{product.title}</Card.Title>
           <Card.Text>${product.price}</Card.Text>
         </Card.Body>
-        <ItemCount></ItemCount>
+        <ItemCount onAdd={onAdd} />
       </Card>
     </div>
   );

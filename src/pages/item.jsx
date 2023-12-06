@@ -20,19 +20,7 @@ const Item = () => {
       });
   }, []);
 
-  return (
-    <div>
-      {loading ? (
-        <div>
-          <LoaderComponent></LoaderComponent>
-        </div>
-      ) : (
-        <div>
-          <ItemCall></ItemCall>
-        </div>
-      )}
-    </div>
-  );
+  return <div>{loading ? <LoaderComponent /> : <ItemCall />}</div>;
 };
 
 export default Item;

@@ -1,4 +1,4 @@
-import Button from "react-bootstrap/Button";
+import { Button } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
@@ -7,7 +7,6 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import CartWidgetComponent from "../CartWidgetComponent/CartWidgetComponent";
 import "./NavbarComponent.css";
 import { Link } from "react-router-dom";
-import { ProductsData } from "../../services/data/ProductsData";
 import { ProductsCategoryData } from "../../services/data/ProductsCategoryData";
 const NavBarComponent = () => {
   return (
@@ -15,13 +14,11 @@ const NavBarComponent = () => {
       <Container fluid>
         <Navbar.Brand>
           <Link to="/">
-            <a>
-              <img
-                className="logo"
-                src="\src\components\navbarComponents\imagen\logoabrillar.png"
-                alt="Imagen de logo"
-              />
-            </a>
+            <img
+              className="logo"
+              src="\src\components\navbarComponents\imagen\logoabrillar.png"
+              alt="Imagen de logo"
+            />
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />

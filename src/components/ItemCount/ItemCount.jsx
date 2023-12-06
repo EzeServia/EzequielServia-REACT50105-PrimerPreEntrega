@@ -1,7 +1,7 @@
 import React from "react";
 import "./ItemCount.css";
 
-export const ItemCount = () => {
+export const ItemCount = ({ onAdd }) => {
   //Esto crea un estado llamado 'count'
   const [count, setCount] = React.useState(0);
 
@@ -25,7 +25,9 @@ export const ItemCount = () => {
         </button>
       </div>
       <div className="container2">
-        <button className="button">Agregar al Carrito</button>
+        <button className="button" onClick={() => onAdd(count)}>
+          Agregar al Carrito
+        </button>
       </div>
     </div>
   );

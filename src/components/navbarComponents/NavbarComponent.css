@@ -8,5 +8,7 @@
 }
 .texto {
   font-size: 24px;
-  color: hotpink;
+}
+.buscador {
+  background-color: lightpink;
 }

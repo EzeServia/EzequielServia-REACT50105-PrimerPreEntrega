@@ -7,6 +7,7 @@ const ItemListContainer = ({ products }) => {
   return (
     <div
       style={{
+        backgroundColor: "lightpink",
         display: "flex",
         flexWrap: "wrap",
         width: "100vw",
@@ -14,7 +15,13 @@ const ItemListContainer = ({ products }) => {
       }}>
       {products.map((product) => {
         return (
-          <Card key={product.id} style={{ width: "18rem", margin: 20 }}>
+          <Card
+            key={product.id}
+            style={{
+              backgroundColor: "#BB8FCE",
+              width: "18rem",
+              margin: 20,
+            }}>
             <Link to={`/item/${product.id}`}>
               <Card.Img variant="top" src={product.image} />
             </Link>

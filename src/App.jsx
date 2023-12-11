@@ -1,13 +1,13 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-
-// Components
-
+import { CartProvider } from "./context/CartContext";
 import MainRouter from "./router/MainRouter";
 
 const App = () => {
   return (
     <div>
-      <MainRouter />
+      <CartProvider>
+        <MainRouter />
+      </CartProvider>
     </div>
   );
 };

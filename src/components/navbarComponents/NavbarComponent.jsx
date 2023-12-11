@@ -29,16 +29,16 @@ const NavBarComponent = () => {
             <Link to="/" style={{ textDecoration: "none", color: "black" }}>
               Home
             </Link>
-            <NavDropdown
-              className="texto"
-              title="Categorias"
-              id="navbarScrollingDropdown">
+            <NavDropdown title="Categorias" id="navbarScrollingDropdown">
               {ProductsCategoryData.map((category) => {
                 return (
                   <NavDropdown.Item key={category.id}>
                     <Link
                       to={`/category/${category.category}`}
-                      style={{ textDecoration: "none", color: "black" }}>
+                      style={{
+                        textDecoration: "none",
+                        color: "black",
+                      }}>
                       {category.category}
                     </Link>
                   </NavDropdown.Item>
@@ -51,10 +51,12 @@ const NavBarComponent = () => {
             <Form.Control
               type="search"
               placeholder="¿Qué estás buscando?"
-              className="me-2"
+              className="me-2 buscador"
               aria-label="Search"
             />
-            <Button variant="outline-success">Buscar</Button>
+            <Button className="buscador" variant="outline-success">
+              Buscar
+            </Button>
           </Form>
         </Navbar.Collapse>
       </Container>

@@ -25,6 +25,7 @@ export const ProductsData = [
     price: 7500,
     category: "Gemas",
     image: imagen1,
+    description: "Kit de glitters autoadhesivos decorativos para el rostro",
   },
   {
     id: 2,
@@ -32,6 +33,7 @@ export const ProductsData = [
     price: 7500,
     category: "Gemas",
     image: imagen2,
+    description: "Kit de glitters autoadhesivos decorativos para el rostro",
   },
   {
     id: 3,
@@ -39,6 +41,7 @@ export const ProductsData = [
     price: 7500,
     category: "Gemas",
     image: imagen3,
+    description: "Kit de glitters autoadhesivos decorativos para el rostro",
   },
   {
     id: 4,
@@ -46,6 +49,7 @@ export const ProductsData = [
     price: 2500,
     category: "Brillos",
     image: imagen4,
+    description: "Glitter brillo en gel decorativos para el cuerpo y rostro",
   },
   {
     id: 5,
@@ -53,6 +57,7 @@ export const ProductsData = [
     price: 2500,
     image: imagen5,
     category: "Brillos",
+    description: "Glitter brillo en gel decorativos para el cuerpo y rostro",
   },
   {
     id: 6,

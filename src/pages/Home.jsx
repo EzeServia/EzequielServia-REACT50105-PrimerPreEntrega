@@ -1,22 +1,23 @@
 import { React, useEffect, useState } from "react";
 import ItemListContainer from "../components/ItemListContainer/ItemListContainer";
-import { fetchProducts, ProductsData } from "../services/data/ProductsData";
-import LoaderComponent from "../components/LoaderComponent/LoaderComponent";
 
+import LoaderComponent from "../components/LoaderComponent/LoaderComponent";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 const Home = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchProducts()
-      .then((data) => {
-        setProducts(data);
-        setLoading(false);
+    const db = getFirestore();
+    const productsCollection = collection(db, "products");
+    getDocs(productsCollection)
+      .then((snapshot) => {
+        setProducts(
+          snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+        );
       })
-      .catch((error) => {
-        console.error("Error al cargar los productos:", error);
-        setLoading(false);
-      });
+      .catch(() => SetError(true))
+      .finally(() => setLoading(false));
   }, []);
 
   return (
@@ -24,7 +25,7 @@ const Home = () => {
       {loading ? (
         <LoaderComponent />
       ) : (
-        <ItemListContainer products={ProductsData} />
+        <ItemListContainer products={products} />
       )}
     </div>
   );

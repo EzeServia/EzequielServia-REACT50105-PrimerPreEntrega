@@ -10,6 +10,7 @@ const ItemDetailContainer = ({ product }) => {
         display: "flex",
         flexWrap: "wrap",
         width: "100vw",
+        height: "100vh",
         justifyContent: "space-around",
       }}>
       <Card
@@ -18,12 +19,13 @@ const ItemDetailContainer = ({ product }) => {
           backgroundColor: "#BB8FCE",
           width: "18rem",
           margin: 20,
-          height: "500px",
+          height: "560px",
         }}>
         <Card.Img variant="top" src={product.image} />
-        <Card.Body>
+        <Card.Body style={{ textAlign: "center" }}>
           <Card.Title>{product.title}</Card.Title>
-          <Card.Text>${product.price}</Card.Text>
+          <Card.Text>{product.description}</Card.Text>
+          <Card.Text style={{ fontSize: "20px" }}>${product.price}</Card.Text>
         </Card.Body>
         <ItemQuantitySelector />
       </Card>

@@ -1,10 +1,25 @@
-import { React, useEffect, useState } from "react";
+import React from "react";
 import ItemListContainer from "../components/ItemListContainer/ItemListContainer";
-
+import { useAllProducts } from "../hook/useProducts";
 import LoaderComponent from "../components/LoaderComponent/LoaderComponent";
-import { collection, getDocs, getFirestore } from "firebase/firestore";
+
 const Home = () => {
-  const [products, setProducts] = useState([]);
+  const { products, loading, error } = useAllProducts();
+
+  return (
+    <div>
+      {loading ? (
+        <LoaderComponent />
+      ) : error ? (
+        <div>Hubo un error</div>
+      ) : (
+        <ItemListContainer products={products} />
+      )}
+    </div>
+  );
+};
+export default Home;
+/*  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -32,3 +47,4 @@ const Home = () => {
 };
 
 export default Home;
+*/

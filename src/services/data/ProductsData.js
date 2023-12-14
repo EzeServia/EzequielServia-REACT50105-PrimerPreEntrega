@@ -7,14 +7,11 @@ import imagen6 from "./image/rojo40.webp";
 
 const fetchProducts = () => {
   return new Promise((resolve, reject) => {
-    // Aquí puedes realizar operaciones asíncronas, como fetch a una API, consulta a una base de datos, etc.
-    // Por ejemplo, aquí simplemente resolvemos la promesa después de un tiempo simulado.
     setTimeout(() => {
       resolve(ProductsData);
-    }, 2000); // Simulamos un tiempo de carga de 1000 milisegundos (4 segundo)
+    }, 2000); // Simulamos un tiempo de carga de 2000 milisegundos (2 segundos)
   });
 };
-console.log("4 segundos");
 
 export { fetchProducts };
 

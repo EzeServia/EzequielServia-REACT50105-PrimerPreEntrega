@@ -15,7 +15,13 @@ export const AddItemButton = ({
   };
 
   return (
-    <Button onClick={handleAddCart} style={{ margin: "10px 0" }}>
+    <Button
+      onClick={handleAddCart}
+      style={{
+        position: "",
+        backgroundColor: "green",
+        margin: "10px",
+      }}>
       {label}
     </Button>
   );

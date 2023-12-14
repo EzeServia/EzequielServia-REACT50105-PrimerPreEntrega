@@ -19,10 +19,14 @@ export const ItemQuantitySelector = () => {
   };
 
   return (
-    <div>
-      <button onClick={handleSubstractProduct}>-</button>
+    <div className="container">
+      <button className="button" onClick={handleSubstractProduct}>
+        -
+      </button>
       <input type="number" value={quantity} disabled />
-      <button onClick={handleAddProduct}>+</button>
+      <button className="button" onClick={handleAddProduct}>
+        +
+      </button>
       <AddItemButton
         quantity={quantity}
         handleResetQuantity={handleResetQuantity}
@@ -30,38 +34,3 @@ export const ItemQuantitySelector = () => {
     </div>
   );
 };
-
-/*import React from "react";
-import "./ItemCount.css";
-
-export const ItemCount = ({ onAdd }) => {
-  //Esto crea un estado llamado 'count'
-  const [count, setCount] = React.useState(0);
-
-  const handleAdd = () => {
-    setCount(count + 1);
-  };
-
-  const handleRemove = () => {
-    setCount(count - 1);
-  };
-
-  return (
-    <div>
-      <div className="container1">
-        <button className="button" onClick={handleRemove}>
-          - 1
-        </button>
-        <h4>{count}</h4>
-        <button className="button" onClick={handleAdd}>
-          + 1
-        </button>
-      </div>
-      <div className="container2">
-        <button className="button" onClick={() => onAdd(count)}>
-          Agregar al Carrito
-        </button>
-      </div>
-    </div>
-  );
-};*/

@@ -19,32 +19,3 @@ const Home = () => {
   );
 };
 export default Home;
-/*  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const db = getFirestore();
-    const productsCollection = collection(db, "products");
-    getDocs(productsCollection)
-      .then((snapshot) => {
-        setProducts(
-          snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
-        );
-      })
-      .catch(() => SetError(true))
-      .finally(() => setLoading(false));
-  }, []);
-
-  return (
-    <div>
-      {loading ? (
-        <LoaderComponent />
-      ) : (
-        <ItemListContainer products={products} />
-      )}
-    </div>
-  );
-};
-
-export default Home;
-*/

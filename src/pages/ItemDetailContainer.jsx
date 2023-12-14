@@ -1,5 +1,5 @@
 import React from "react";
-import ItemDetailContainer from "../components/ItemDetailContainer/ItemDetailContainer";
+import ItemDetail from "../components/ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 import { useSingleProduct } from "../hook/useProducts";
 import LoaderComponent from "../components/LoaderComponent/LoaderComponent";
@@ -16,7 +16,7 @@ const Item = () => {
       ) : error ? (
         <div>Hubo un error</div>
       ) : (
-        <ItemDetailContainer product={product} />
+        <ItemDetail product={product} />
       )}
     </div>
   );

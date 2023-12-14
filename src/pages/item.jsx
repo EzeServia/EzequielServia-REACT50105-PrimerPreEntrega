@@ -5,9 +5,9 @@ import { useSingleProduct } from "../hook/useProducts";
 import LoaderComponent from "../components/LoaderComponent/LoaderComponent";
 
 const Item = () => {
-  const { productId } = useParams();
+  const { id } = useParams();
 
-  const { product, loading, error } = useSingleProduct(productId);
+  const { product, loading, error } = useSingleProduct(id);
 
   return (
     <div>
@@ -16,7 +16,7 @@ const Item = () => {
       ) : error ? (
         <div>Hubo un error</div>
       ) : (
-        <ItemDetailContainer products={product} />
+        <ItemDetailContainer product={product} />
       )}
     </div>
   );

@@ -1,26 +1,24 @@
-import { React, useState, useEffect } from "react";
-
-import { fetchProducts } from "../services/data/ProductsData"; // Asegúrate de importar ProductsData
-import ItemCall from "../components/ItemCall/ItemCall";
+import React from "react";
+import ItemDetailContainer from "../components/ItemDetailContainer/ItemDetailContainer";
+import { useParams } from "react-router-dom";
+import { useSingleProduct } from "../hook/useProducts";
 import LoaderComponent from "../components/LoaderComponent/LoaderComponent";
 
 const Item = () => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const { productId } = useParams();
 
-  useEffect(() => {
-    fetchProducts()
-      .then((data) => {
-        setProducts(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error al cargar los productos:", error);
-        setLoading(false);
-      });
-  }, []);
+  const { product, loading, error } = useSingleProduct(productId);
 
-  return <div>{loading ? <LoaderComponent /> : <ItemCall />}</div>;
+  return (
+    <div>
+      {loading ? (
+        <LoaderComponent />
+      ) : error ? (
+        <div>Hubo un error</div>
+      ) : (
+        <ItemDetailContainer products={product} />
+      )}
+    </div>
+  );
 };
-
 export default Item;

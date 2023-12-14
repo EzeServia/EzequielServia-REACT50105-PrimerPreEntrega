@@ -1,15 +1,23 @@
-import React from "react";
+/*import React from "react";
 import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
-import { ProductsData } from "../../services/data/ProductsData";
 import { useParams } from "react-router-dom";
-const ItemCall = () => {
-  const { id } = useParams();
+import { useSingleProduct } from "../hooks/useProducts";
 
-  const productFiltered = ProductsData.filter(
-    (product) => product.id === parseInt(id)
+const ItemDetail = () => {
+  const { productId } = useParams();
+
+  const { product, loading, error } = useSingleProduct(productId);
+
+  return (
+    <div>
+      {loading ? (
+        <LoaderComponent />
+      ) : error ? (
+        <div>Hubo un error</div>
+      ) : (
+        <ItemDetailContainer products={products} />
+      )}
+    </div>
   );
-
-  return <ItemDetailContainer product={productFiltered[0]} />;
 };
-
-export default ItemCall;
+export default ItemDetail;*/

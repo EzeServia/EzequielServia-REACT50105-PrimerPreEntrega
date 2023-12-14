@@ -48,7 +48,7 @@ export const useSingleProduct = (id) => {
       })
       .catch(() => setError(true))
       .finally(() => setLoading(false));
-  }, []);
+  }, [id]);
 
   return { product, loading, error };
 };

@@ -48,15 +48,6 @@ const NavBarComponent = () => {
           </Nav>
           <Form className="d-flex">
             <CartWidgetComponent />
-            <Form.Control
-              type="search"
-              placeholder="¿Qué estás buscando?"
-              className="me-2 buscador"
-              aria-label="Search"
-            />
-            <Button className="buscador" variant="outline-success">
-              Buscar
-            </Button>
           </Form>
         </Navbar.Collapse>
       </Container>

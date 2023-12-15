@@ -10,7 +10,7 @@ const CartWidgetComponent = () => {
         src="\src\components\CartWidgetComponent\imagen\carrito.png"
         alt="Imagen de carrito de compras"
       />
-      <span>{itemCount}</span>
+      <span className="number">{itemCount}</span>
     </div>
   );
 };

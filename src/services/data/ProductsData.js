@@ -1,6 +1,6 @@
-import imagen1 from "./image/gemacara1.webp";
-import imagen2 from "./image/gemacara2.webp";
-import imagen3 from "./image/gemacara3.webp";
+import imagen1 from "./image/combo3.jpg";
+import imagen2 from "./image/combo2.jpg";
+import imagen3 from "./image/shampoo.jpg";
 import imagen4 from "./image/rosababy.webp";
 import imagen5 from "./image/violeta402.webp";
 import imagen6 from "./image/rojo40.webp";
@@ -18,25 +18,26 @@ export { fetchProducts };
 export const ProductsData = [
   {
     id: 1,
-    title: "Queen Perlas",
+    title: "Tónico, emulsión y Protector",
     price: 7500,
-    category: "Gemas",
+    category: "Balsamos",
     image: imagen1,
     description: "Kit de glitters autoadhesivos decorativos para el rostro",
+    text: "Combo refrescante para el skincare antes de dormir",
   },
   {
     id: 2,
-    title: "Princess Corazón",
+    title: "Tónico y Emulsión",
     price: 7500,
-    category: "Gemas",
+    category: "Balsamos",
     image: imagen2,
     description: "Kit de glitters autoadhesivos decorativos para el rostro",
   },
   {
     id: 3,
-    title: "Paris Nigth",
+    title: "Shampoo Corporal",
     price: 7500,
-    category: "Gemas",
+    category: "Shampoos",
     image: imagen3,
     description: "Kit de glitters autoadhesivos decorativos para el rostro",
   },

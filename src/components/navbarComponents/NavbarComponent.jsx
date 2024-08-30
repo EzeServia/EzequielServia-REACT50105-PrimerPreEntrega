@@ -16,7 +16,7 @@ const NavBarComponent = () => {
           <Link to="/">
             <img
               className="logo"
-              src="\src\components\navbarComponents\imagen\logoabrillar.png"
+              src="\src\components\navbarComponents\imagen\logoBelleza.png"
               alt="Imagen de logo"
             />
           </Link>
@@ -27,7 +27,7 @@ const NavBarComponent = () => {
             className="me-auto my-2 my-lg-0 texto"
             style={{ maxHeight: "100px" }}>
             <Link to="/" style={{ textDecoration: "none", color: "black" }}>
-              Home
+              Catálogo
             </Link>
             <NavDropdown title="Categorias" id="navbarScrollingDropdown">
               {ProductsCategoryData.map((category) => {

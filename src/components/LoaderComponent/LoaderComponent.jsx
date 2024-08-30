@@ -10,7 +10,7 @@ const LoaderComponent = () => {
         height: "100vh",
         width: "100vw",
       }}>
-      <l-helix size="100" speed="2.5" color="violet"></l-helix>
+      <l-helix size="100" speed="2.5" color="#9c75b2"></l-helix>
     </div>
   );
 };

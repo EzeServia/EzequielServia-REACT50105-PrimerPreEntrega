@@ -1,14 +1,15 @@
 .logo {
-  width: 150px;
+  width: 350px;
+  height: 200px;
 }
 .fondo {
   width: auto;
-  background-image: url(./imagen/brillo.jpg);
+  background-color: white;
   height: 200px;
 }
 .texto {
   font-size: 24px;
 }
 .buscador {
-  background-color: lightpink;
+  background-color: #9c75b2;
 }

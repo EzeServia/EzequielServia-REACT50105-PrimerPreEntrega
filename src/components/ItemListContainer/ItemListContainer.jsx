@@ -7,18 +7,18 @@ const ItemListContainer = ({ products }) => {
   return (
     <div
       style={{
-        backgroundColor: "lightpink",
+        backgroundColor: "#9c75b2",
         display: "flex",
         flexWrap: "wrap",
         width: "100vw",
-        justifyContent: "space-around",
+        justifyContent: "start",
       }}>
       {products.map((product) => {
         return (
           <Card
             key={product.id}
             style={{
-              backgroundColor: "#BB8FCE",
+              backgroundColor: "#9c75b2",
               width: "18rem",
               margin: 20,
             }}>
@@ -27,6 +27,7 @@ const ItemListContainer = ({ products }) => {
             </Link>
             <Card.Body>
               <Card.Title>{product.title}</Card.Title>
+              <Card.Text>{product.Text}</Card.Text>
               <Card.Text>${product.price}</Card.Text>
             </Card.Body>
           </Card>

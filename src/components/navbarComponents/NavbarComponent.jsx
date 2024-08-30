@@ -8,6 +8,7 @@ import CartWidgetComponent from "../CartWidgetComponent/CartWidgetComponent";
 import "./NavbarComponent.css";
 import { Link } from "react-router-dom";
 import { ProductsCategoryData } from "../../services/data/ProductsCategoryData";
+
 const NavBarComponent = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary fondo ">

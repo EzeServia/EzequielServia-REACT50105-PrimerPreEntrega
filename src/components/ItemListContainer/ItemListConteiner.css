@@ -2,3 +2,13 @@
   background-image: none;
   background-color: #9c75b2;
 }
+
+@font-face {
+  font-family: "Blacksword";
+  src: url("../../pages/fuente/Blacksword.otf") format("truetype"); /* Cambia el formato si es necesario */
+  font-weight: normal;
+  font-style: normal;
+}
+div {
+  font-family: "Blacksword", sans-serif; /* Aplica la fuente */
+}

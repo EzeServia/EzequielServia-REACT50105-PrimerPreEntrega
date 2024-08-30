@@ -21,6 +21,7 @@ const ItemListContainer = ({ products }) => {
               backgroundColor: "#9c75b2",
               width: "18rem",
               margin: 20,
+              borderColor: "white",
             }}>
             <Link to={`/item/${product.id}`}>
               <Card.Img variant="top" src={product.image} />
